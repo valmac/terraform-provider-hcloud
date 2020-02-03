@@ -3,11 +3,9 @@ language: go
 go:
   - "1.13.x"
 script:
-  - go get github.com/bflad/tfproviderlint/cmd/tfproviderlint
   - export HCLOUD_TOKEN=$(./scripts/get-token.sh)
   - cat resp.json
   - make test
-  - tfproviderlint ./...
   - travis_wait 30 make testacc
   - make
   - ./scripts/delete-token.sh $HCLOUD_TOKEN
