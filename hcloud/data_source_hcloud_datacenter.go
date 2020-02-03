@@ -31,7 +31,7 @@ func dataSourceHcloudDatacenter() *schema.Resource {
 			"location": {
 				Type:     schema.TypeMap,
 				Computed: true,
-				Elem:     dataSourceHcloudLocation().Schema,
+				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 			"supported_server_type_ids": {
 				Type:     schema.TypeList,
