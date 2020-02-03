@@ -32,7 +32,7 @@ func resourceNetwork() *schema.Resource {
 			"labels": {
 				Type:     schema.TypeMap,
 				Optional: true,
-				Elem: &schema.Schema{Type:schema.TypeString},
+				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 		},
 	}

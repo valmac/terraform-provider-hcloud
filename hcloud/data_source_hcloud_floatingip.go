@@ -48,7 +48,7 @@ func dataSourceHcloudFloatingIP() *schema.Resource {
 			"labels": {
 				Type:     schema.TypeMap,
 				Computed: true,
-				Elem: &schema.Schema{Type:schema.TypeString},
+				Elem:     &schema.Schema{Type: schema.TypeString},
 			},
 			"selector": {
 				Type:          schema.TypeString,
