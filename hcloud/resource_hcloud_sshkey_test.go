@@ -35,6 +35,12 @@ func TestAccHcloudSSHKey_Basic(t *testing.T) {
 						"hcloud_ssh_key.foobar", "public_key", publicKeyMaterial),
 				),
 			},
+			{
+				ResourceName:            "hcloud_ssh_key.foobar",
+				ImportState:             true,
+				ImportStateVerify:       true,
+				ImportStateVerifyIgnore: []string{"public_key"},
+			},
 		},
 	})
 }

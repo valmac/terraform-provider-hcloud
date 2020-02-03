@@ -14,7 +14,7 @@ func init() {
 		Name: "hcloud_image_data_source",
 	})
 }
-func TestAccHcloudDataSourceImage(t *testing.T) {
+func TestAccHcloudDataSourceImage_Basic(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccHcloudPreCheck(t) },
 		Providers: testAccProviders,
@@ -39,7 +39,7 @@ func TestAccHcloudDataSourceImage(t *testing.T) {
 		},
 	})
 }
-func TestAccHcloudDataSourceImageSort(t *testing.T) {
+func TestAccHcloudDataSourceImage_Sort(t *testing.T) {
 	testImageList := []*hcloud.Image{
 		{
 			ID:      5,

@@ -1,6 +1,7 @@
 TEST?=$$(go list ./... |grep -v 'vendor')
 GOFMT_FILES?=$$(find . -name '*.go' |grep -v vendor)
-VERSION=$(shell ./scripts/git-version.sh)
+#VERSION=$(shell ./scripts/git-version.sh)
+VERSION=after_linting
 PKG_NAME=hcloud
 WEBSITE_REPO=github.com/hashicorp/terraform-website
 export CGO_ENABLED:=0

@@ -83,7 +83,7 @@ func resourceReverseDNSRead(d *schema.ResourceData, m interface{}) error {
 		d.SetId(generateRDNSID(server, nil, ip.String()))
 		d.Set("dns_ptr", server.PublicNet.IPv4.DNSPtr)
 		d.Set("server_id", server.ID)
-		d.Set("ip_address", server.PublicNet.IPv4.IP)
+		d.Set("ip_address", string(server.PublicNet.IPv4.IP))
 		return nil
 	}
 

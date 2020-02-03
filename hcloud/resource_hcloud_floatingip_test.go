@@ -64,6 +64,11 @@ func TestAccHcloudFloatingIP_AssignAndUpdateDescription(t *testing.T) {
 						"hcloud_floating_ip.floating_ip", "name", fmt.Sprintf("floating-ip-updated-%d", rInt)),
 				),
 			},
+			{
+				ResourceName:      "hcloud_floating_ip.floating_ip",
+				ImportState:       true,
+				ImportStateVerify: true,
+			},
 		},
 	})
 }

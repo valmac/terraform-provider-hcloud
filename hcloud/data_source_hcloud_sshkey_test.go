@@ -9,7 +9,7 @@ import (
 	"github.com/hetznercloud/hcloud-go/hcloud"
 )
 
-func TestAccHcloudDataSourceSSHKey(t *testing.T) {
+func TestAccHcloudDataSourceSSHKey_Basic(t *testing.T) {
 	var key hcloud.SSHKey
 	rInt := acctest.RandInt()
 	publicKeyMaterial, _, err := acctest.RandSSHKeyPair("hcloud-ds@ssh-acceptance-test")

@@ -9,7 +9,7 @@ import (
 	"github.com/hetznercloud/hcloud-go/hcloud"
 )
 
-func TestAccHcloudDataSourceNetwork(t *testing.T) {
+func TestAccHcloudDataSourceNetwork_Basic(t *testing.T) {
 	var network hcloud.Network
 	rInt := acctest.RandInt()
 	resource.Test(t, resource.TestCase{

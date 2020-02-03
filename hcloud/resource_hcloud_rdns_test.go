@@ -24,10 +24,11 @@ func init() {
 	}
 }
 
-func TestAccHcloudReverseDNSServerCreateAndChange(t *testing.T) {
+func TestAccHcloudReverseDNS_ServerCreateAndChange(t *testing.T) {
 	var server hcloud.Server
 	rInt := acctest.RandInt()
 
+	//lintignore:AT001
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccHcloudPreCheck(t) },
 		Providers: testAccProviders,
@@ -62,10 +63,11 @@ func TestAccHcloudReverseDNSServerCreateAndChange(t *testing.T) {
 	})
 }
 
-func TestAccHcloudReverseDNSFloatingIpIpv4CreateAndChange(t *testing.T) {
+func TestAccHcloudReverseDNS_FloatingIpIpv4CreateAndChange(t *testing.T) {
 	var floatingIP hcloud.FloatingIP
 	rInt := acctest.RandInt()
 
+	//lintignore:AT001
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccHcloudPreCheck(t) },
 		Providers: testAccProviders,
@@ -90,10 +92,11 @@ func TestAccHcloudReverseDNSFloatingIpIpv4CreateAndChange(t *testing.T) {
 	})
 }
 
-func TestAccHcloudReverseDNSFloatingIpIpv6CreateAndChange(t *testing.T) {
+func TestAccHcloudReverseDNS_FloatingIpIpv6CreateAndChange(t *testing.T) {
 	var floatingIP hcloud.FloatingIP
 	rInt := acctest.RandInt()
 
+	//lintignore:AT001
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccHcloudPreCheck(t) },
 		Providers: testAccProviders,

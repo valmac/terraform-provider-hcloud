@@ -17,7 +17,7 @@ func init() {
 	})
 }
 
-func TestAccHcloudDataSourceFloatingIP(t *testing.T) {
+func TestAccHcloudDataSourceFloatingIP_Basic(t *testing.T) {
 	var floatingIP hcloud.FloatingIP
 	rInt := acctest.RandInt()
 	resource.Test(t, resource.TestCase{

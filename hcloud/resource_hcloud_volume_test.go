@@ -41,6 +41,11 @@ func TestAccHcloudVolume_Basic(t *testing.T) {
 				),
 			},
 			{
+				ResourceName:      "hcloud_volume.foobar",
+				ImportState:       true,
+				ImportStateVerify: true,
+			},
+			{
 				Config: testAccHcloudCheckVolumeConfig_resize(rInt),
 				Check: resource.ComposeTestCheckFunc(
 					testAccHcloudCheckVolumeExists("hcloud_volume.foobar", &volume),

@@ -62,6 +62,14 @@ func TestAccHcloudServer_Basic(t *testing.T) {
 						"hcloud_server.foobar", "backups", "true"),
 				),
 			},
+
+			{
+				ResourceName:      "hcloud_server.foobar",
+				ImportState:       true,
+				ImportStateVerify: true,
+				ImportStateVerifyIgnore: []string{
+					"ssh_keys", "user_data", "keep_disk"},
+			},
 		},
 	})
 }

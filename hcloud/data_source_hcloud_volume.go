@@ -28,6 +28,7 @@ func dataSourceHcloudVolume() *schema.Resource {
 			"labels": {
 				Type:     schema.TypeMap,
 				Computed: true,
+				Elem: &schema.Schema{Type:schema.TypeString},
 			},
 			"location": {
 				Type:     schema.TypeString,

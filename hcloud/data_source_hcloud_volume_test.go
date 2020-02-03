@@ -10,7 +10,7 @@ import (
 	"github.com/hetznercloud/hcloud-go/hcloud"
 )
 
-func TestAccHcloudDataSourceVolume(t *testing.T) {
+func TestAccHcloudDataSourceVolume_Basic(t *testing.T) {
 	var volume hcloud.Volume
 	rInt := acctest.RandInt()
 	resource.Test(t, resource.TestCase{

@@ -5,6 +5,7 @@ BUG FIXES:
 
 NOTES:
 * This release uses Terraform Plugin SDK v1.6.0.
+* This provider is now linted using `tfproviderlint`
 
 ## 1.15.0 (November 11, 2019)
 

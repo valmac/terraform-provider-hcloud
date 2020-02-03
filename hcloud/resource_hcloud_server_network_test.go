@@ -19,7 +19,7 @@ func init() {
 	})
 }
 
-func TestAccHcloudServerNetwork(t *testing.T) {
+func TestAccHcloudServerNetwork_Basic(t *testing.T) {
 	var network hcloud.Network
 	var subnet hcloud.NetworkSubnet
 	var srvNet hcloud.ServerPrivateNet

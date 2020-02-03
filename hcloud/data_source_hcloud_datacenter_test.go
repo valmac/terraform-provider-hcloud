@@ -12,7 +12,7 @@ func init() {
 		Name: "hcloud_datacenter_data_source",
 	})
 }
-func TestAccHcloudDataSourceDatasource(t *testing.T) {
+func TestAccHcloudDataSourceDatasource_Basic(t *testing.T) {
 	resource.Test(t, resource.TestCase{
 		PreCheck:  func() { testAccHcloudPreCheck(t) },
 		Providers: testAccProviders,

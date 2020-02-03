@@ -14,7 +14,7 @@ data "hcloud_ssh_keys" "keys_with_label" {
 }
 `
 
-func TestAccHcloudDataSourceSSHKeys(t *testing.T) {
+func TestAccHcloudDataSourceSSHKeys_Basic(t *testing.T) {
 	rInt := acctest.RandInt()
 	publicKeyMaterial, _, err := acctest.RandSSHKeyPair("hcloud-ds@ssh-acceptance-test")
 	if err != nil {

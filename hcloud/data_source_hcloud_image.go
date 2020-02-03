@@ -6,6 +6,7 @@ import (
 	"log"
 	"sort"
 	"strconv"
+	"time"
 
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hetznercloud/hcloud-go/hcloud"
@@ -55,6 +56,7 @@ func dataSourceHcloudImage() *schema.Resource {
 			"labels": {
 				Type:     schema.TypeMap,
 				Computed: true,
+				Elem: &schema.Schema{Type:schema.TypeString},
 			},
 			"selector": {
 				Type:          schema.TypeString,
@@ -154,11 +156,15 @@ func setImageSchema(d *schema.ResourceData, i *hcloud.Image) {
 	d.SetId(strconv.Itoa(i.ID))
 	d.Set("type", i.Type)
 	d.Set("name", i.Name)
-	d.Set("created", i.Created)
+	d.Set("created", i.Created.Format(time.RFC3339))
 	d.Set("description", i.Description)
 	d.Set("os_flavor", i.OSFlavor)
 	d.Set("os_version", i.OSVersion)
 	d.Set("rapid_deploy", i.RapidDeploy)
-	d.Set("deprecated", i.Deprecated)
+	if i.IsDeprecated() {
+		d.Set("deprecated", i.Created.Format(time.RFC3339))
+	} else {
+		d.Set("deprecated", nil)
+	}
 	d.Set("labels", i.Labels)
 }

@@ -48,6 +48,11 @@ func TestAccHcloudNetwork_Basic(t *testing.T) {
 						"hcloud_network.foobar", "ip_range", "10.0.0.0/16"),
 				),
 			},
+			{
+				ResourceName:      "hcloud_network.foobar",
+				ImportState:       true,
+				ImportStateVerify: true,
+			},
 		},
 	})
 }

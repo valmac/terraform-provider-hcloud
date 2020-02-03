@@ -17,7 +17,7 @@ func init() {
 	})
 }
 
-func TestAccHcloudDataSourceServer(t *testing.T) {
+func TestAccHcloudDataSourceServer_Basic(t *testing.T) {
 	var server hcloud.Server
 	rInt := acctest.RandInt()
 	resource.Test(t, resource.TestCase{
